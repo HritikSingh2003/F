@@ -81,33 +81,22 @@
 
 </header>
 
-<section class="hero" id="home" style="position:relative; height:100vh; display:flex; align-items:center; justify-content:center; padding:0 50px; overflow:hidden;">
-  <!-- THREE.JS BACKGROUND -->
-  <div id="threejs" style="position:absolute; inset:0; z-index:-1;"></div>
+<section class="hero" id="home">
+  <div id="threejs"></div>
 
-  <!-- HERO CONTENT -->
-  <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:50px; max-width:1200px; width:100%;">
-    
-    <!-- LEFT TEXT -->
-    <div style="flex:1; min-width:320px; max-width:600px;">
-      <h2 style="font-size:3.5rem; color:#00a5e0; line-height:1.2; margin-bottom:20px; font-weight:700; white-space: nowrap;">
-        Your Brand Our Team
-      </h2>
+  <div class="hero-content">
+    <div class="hero-text">
+      <h2>Your Brand Our Team</h2>
+      <p>
+        From Funky web design to hyper-targeted SEO, we deliver the technical firepower and creative spark to make your business unstoppable.
+      </p>
+      <p>Do you want to?</p>
 
-      <p style="font-size:1.2rem; color:#ccc; margin-bottom:10px;">From Funky web design to hyper-targeted SEO, we deliver the technical firepower and creative spark to make your business unstoppale.</p>
-      <p style="font-size:1.2rem; color:#ccc; margin-bottom:25px;">Do you want to?</p>
-      <button onclick="openWhatsApp()" style="padding:15px 40px; font-size:1rem; background:linear-gradient(135deg,#00a5e0,#26017b); border:none; border-radius:30px; color:#fff; cursor:pointer; box-shadow:0 10px 20px rgba(108,99,255,0.3); transition:0.3s;">
-        Get Started
-      </button>
-      <button onclick="viewPortfolio()" 
-        style="padding:15px 40px; font-size:1rem; 
-               background:linear-gradient(135deg,#00a5e0,#26017b); 
-               border:none; border-radius:30px; color:#fff; 
-               cursor:pointer; box-shadow:0 10px 20px rgba(108,99,255,0.3); 
-               transition:0.3s;">
-    View Portfolio
-</button>
+      <button class="hero-btn" onclick="openWhatsApp()">Get Started</button>
+      <button class="hero-btn" onclick="viewPortfolio()">View Portfolio</button>
     </div>
+  </div>
+</section>
 
     
 
