@@ -64,6 +64,76 @@ function viewPortfolio() {
     window.location.href = 'portfolio.html';
 }
 
+/*  Effect */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const container = document.getElementById("threejs");
+  if (!container) return;
+
+  const scene = new THREE.Scene();
+
+  const camera = new THREE.PerspectiveCamera(
+    60,
+    container.clientWidth / container.clientHeight,
+    0.1,
+    1000
+  );
+  camera.position.z = 50;
+
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  container.appendChild(renderer.domElement);
+
+  // Lights
+  scene.add(new THREE.AmbientLight(0xffffff, 0.7));
+
+  const light = new THREE.PointLight(0x00a5e0, 2);
+  light.position.set(20, 20, 20);
+  scene.add(light);
+
+  // Particles
+  const particles = new THREE.BufferGeometry();
+  const count = 1500;
+  const pos = new Float32Array(count * 3);
+
+  for (let i = 0; i < count * 3; i++) {
+    pos[i] = (Math.random() - 0.5) * 300;
+  }
+
+  particles.setAttribute("position", new THREE.BufferAttribute(pos, 3));
+
+  const pMesh = new THREE.Points(
+    particles,
+    new THREE.PointsMaterial({ size: 1.2, color: 0x00a5e0 })
+  );
+
+  scene.add(pMesh);
+
+  // Animation
+  function animate() {
+    requestAnimationFrame(animate);
+    pMesh.rotation.y += 0.0008;
+    renderer.render(scene, camera);
+  }
+
+  animate();
+
+  // Resize Fix
+  window.addEventListener("resize", () => {
+    camera.aspect = container.clientWidth / container.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container.clientWidth, container.clientHeight);
+  });
+
+});
+
+
+
+
+
+
 
 /* LIGHT MODE TOGGLE */
 
