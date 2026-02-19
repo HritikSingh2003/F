@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<title>Fuzzads.com | Next-Gen Digital Marketing</title>
+
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+
+
+
+<body class="dark-mode">
+
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-content">
+
+    <a href="mailto:info@fuzzads.com?subject=Business Inquiry from Website&body=Hi FuzzAds Team,%0A%0AI am interested in your services.%0A%0APlease contact me.%0A%0AThanks."
+       class="top-link">
+      📧 info@fuzzads.com
+    </a>
+
+    <a href="tel:+919310930177" class="top-link">
+      📞 +91 93109 30177
+    </a>
+
+    <a href="#contact" class="request-btn">
+      Request a Call →
+    </a>
+
+  </div>
+</div>
+
+
+
+<!-- AI CHATBOT -->
+<div id="aiChatbot">
+  <div id="aiHeader">🤖 Fuzzads AI Assistant</div>
+
+  <div id="aiMessages"></div>
+
+  <div id="aiOptions">
+    <button onclick="userSelect('SEO')">SEO</button>
+    <button onclick="userSelect('Paid Ads')">Paid Ads</button>
+    <button onclick="userSelect('Social Media')">Social Media</button>
+    <button onclick="userSelect('Website')">Website</button>
+  </div>
+</div>
+
+<button id="chatbotToggle" onclick="toggleChatbot()">💬</button>
+
+
+<header>
+<div class="logo">
+  <img src="Icon.png" alt="Fuzzads Logo">
+  <h1>Fuzzads</h1>
+</div>
+
+<nav class="top-contact">
+
+      <a href="index.html">Home</a>
+      <a href="About.html">About Us</a>
+      <a href="Service.html">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="Contact.html">Contact Us</a>
+
+
+  <!-- Toggle button with icon image -->
+<button id="modeToggle">
+  <img id="toggleIcon" src="sun.png" alt="Light Mode" width="24" height="24">
+</button>
+
+</nav>
+
+</header>
+
+<section class="hero" id="home" style="position:relative; height:100vh; display:flex; align-items:center; justify-content:center; padding:0 50px; overflow:hidden;">
+  <!-- THREE.JS BACKGROUND -->
+  <div id="threejs" style="position:absolute; inset:0; z-index:-1;"></div>
+
+  <!-- HERO CONTENT -->
+  <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:50px; max-width:1200px; width:100%;">
+    
+    <!-- LEFT TEXT -->
+    <div style="flex:1; min-width:320px; max-width:600px;">
+      <h2 style="font-size:3.5rem; color:#00a5e0; line-height:1.2; margin-bottom:20px; font-weight:700; white-space: nowrap;">
+        Your Brand Our Team
+      </h2>
+
+      <p style="font-size:1.2rem; color:#ccc; margin-bottom:10px;">From Funky web design to hyper-targeted SEO, we deliver the technical firepower and creative spark to make your business unstoppale.</p>
+      <p style="font-size:1.2rem; color:#ccc; margin-bottom:25px;">Do you want to?</p>
+      <button onclick="openWhatsApp()" style="padding:15px 40px; font-size:1rem; background:linear-gradient(135deg,#00a5e0,#26017b); border:none; border-radius:30px; color:#fff; cursor:pointer; box-shadow:0 10px 20px rgba(108,99,255,0.3); transition:0.3s;">
+        Get Started
+      </button>
+      <button onclick="viewPortfolio()" 
+        style="padding:15px 40px; font-size:1rem; 
+               background:linear-gradient(135deg,#00a5e0,#26017b); 
+               border:none; border-radius:30px; color:#fff; 
+               cursor:pointer; box-shadow:0 10px 20px rgba(108,99,255,0.3); 
+               transition:0.3s;">
+    View Portfolio
+</button>
+    </div>
+
+    
+
+  </div>
+</section>
+
+<!-- Our Clients Section -->
+<section class="section clients-section" id="clients">
+
+  <h2 class="clients-title">Our Clients</h2>
+
+  <div class="clients-slider">
+
+    <div class="clients-track">
+      <!-- Repeat logos for smooth infinite effect -->
+
+      <div class="client-logo"><img src="Vincentvolt.png" alt=""></div>
+      <div class="client-logo"><img src="Vincentvolt.png" alt=""></div>
+      <div class="client-logo"><img src="Vincentvolt.png" alt=""></div>
+      <div class="client-logo"><img src="Vincentvolt.png" alt=""></div>
+      <div class="client-logo"><img src="Vincentvolt.png" alt=""></div>
+
+      <!-- Duplicate same logos -->
+      <div class="client-logo"><img src="Vincentvolt.png" alt=""></div>
+      <div class="client-logo"><img src="Vincentvolt.png" alt=""></div>
+      <div class="client-logo"><img src="Vincentvolt.png" alt=""></div>
+      <div class="client-logo"><img src="Vincentvolt.png" alt=""></div>
+      <div class="client-logo"><img src="Vincentvolt.png" alt=""></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="section dark" id="testimonials">
+
+  <div class="cards testimonials">
+
+    <div class="card">
+        <h4>2+</h4>
+      <strong class="author">Happy Clients</strong>
+    </div>
+
+    <div class="card">
+         <h4>4+</h4>
+      <strong class="author">Project</strong>
+    </div>
+
+    <div class="card">
+         <h4>1+</h4>
+      <strong class="author">Working Experience</strong>
+    </div>
+
+  </div>
+</section>
+
+
+<!--Why Settle for Boring Section --> 
+<section class="section dark" id="services">
+
+  <h3>Why Settle for Boring ?</h3>
+
+  <p class="section-subtitle fancy-subtitle">
+    The digital space is crowded. We cut through the noise with funky designs, and data driven strategies. Whether you are launching from scratch or scaling up, we bring the technical firepower and the creative spark to make it happen.
+  </p><br>
+
+  <div class="cards services">
+
+    <!-- 1️⃣ Web Development -->
+<div class="card">
+  <div class="stat-icon">
+    <img src="6.png" alt="Web Icon" style="width:50px; height:50px;">
+  </div>
+  <h4>Web Development</h4>
+  <p>
+    Lightning-fast, hyper-responsive, and visually stunning.
+  </p>
+  
+</div>
+
+
+    <!-- 2️⃣ App Development -->
+    <div class="card">
+  <div class="stat-icon">
+    <img src="7.png" alt="App Icon" style="width:50px; height:50px;">
+  </div>
+  <h4>App Development</h4>
+  <p>
+    Pocket-sized experiences your users will love.
+  </p>
+  
+</div>
+
+    <!-- 3️⃣ SEO -->
+    <div class="card">
+  <div class="stat-icon">
+    <img src="8.png" alt="SEO Icon" style="width:50px; height:50px;">
+  </div>
+  <h4>SEO</h4>
+  <p>
+    Climb the ranks and get found by the people who matter.
+  </p>
+  
+</div>
+
+    <!-- 4️⃣ Digital Marketing
+      -->
+    <div class="card">
+  <div class="stat-icon">
+    <img src="9.png" alt="Digital Marketing Icon" style="width:50px; height:50px;">
+  </div>
+  <h4>Digital Marketing</h4>
+  <p>
+    Campaigns that grab attention and drive real conversions.
+  </p>
+  
+</div>
+
+  </div>
+
+</section>
+
+
+
+
+<section class="section dark" id="testimonials">
+  <div class="contact-container">
+    <div class="contact-image">
+      <img src="11.png" alt="Get In Touch Illustration">
+    </div>
+    <div class="lead-form">
+      <h3>Get In Touch</h3>
+      <form onsubmit="submitLead(event)">
+        <input type="text" id="name" placeholder="Full Name Full Name" required>
+        <input type="tel" id="phone" placeholder="Mobile Number" required>
+        <input type="email" id="email" placeholder="Email ID" required>
+        <textarea id="message" placeholder="Message" required></textarea>
+        <button type="submit">Connect Now &#9654;</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+  <section class="section dark" id="testimonials">
+
+  <div class="cards testimonials">
+
+    <div class="card">
+        <h4>27*7</h4>
+      <strong class="author">Support Availability</strong>
+    </div>
+
+    <div class="card">
+         <h4>100%</h4>
+      <strong class="author">Clients Work on-time</strong>
+    </div>
+
+    <div class="card">
+         <h4>50+</h4>
+      <strong class="author">Services to offer</strong>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+<footer class="site-footer">
+  <div class="footer-container">
+    
+    <!-- ABOUT COLUMN -->
+    <div class="footer-col">
+      <img src="Icon.png" alt="FuzzAds Logo" class="footer-logo-img">
+      <h2 class="footer-logo">FuzzAds</h2>
+      <h3>Your Brand Our Team.</h3>
+         <p>We help brands grow through 
+        modern digital marketing strategies that deliver results.
+      </p>
+      
+      
+
+      <!-- Social Icons -->
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook" class="social-fb">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22 12a10 10 0 10-11.6 9.9v-7h-2.2V12h2.2V9.6c0-2.2 1.3-3.4 3.3-3.4.96 0 2 .17 2 .17v2.2h-1.1c-1.1 0-1.4.68-1.4 1.38V12h2.4l-.38 2.9h-2V22A10 10 0 0022 12z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Twitter" class="social-tw">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.3 2H21l-6.3 7.2L22 22h-6l-4.7-6.4L5.8 22H3l6.8-7.8L2 2h6.1l4.3 5.9L18.3 2z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="LinkedIn" class="social-li">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.2 8H4.8V24H.2V8zM8.4 8h4.4v2.2h.06c.6-1.1 2.1-2.2 4.3-2.2 4.6 0 5.4 3 5.4 7V24h-4.6v-6.7c0-1.6 0-3.7-2.3-3.7-2.3 0-2.6 1.7-2.6 3.6V24H8.4V8z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Instagram" class="social-ig">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6.5-.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="site.html">Site Map</a>
+      <a href="About.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="Privacy.html">Privacy Policy</a>
+      <a href="Return.html">Return & Refund</a>
+      <a href="Terms.html">Terms & Conditions</a>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a>Web Development</a>
+      <a>App Development</a>
+      <a>Digital Marketing</a>
+      <a>Social Media Marketing</a>
+      <a>Search Engine Optimization</a>
+      <a>Graphic Designing</a>
+      
+    </div>
+
+    <!-- CONTACT INFO + MAP (Contact UPAr, Map Neeche) -->
+<div class="footer-col">
+  <h4>Contact Info</h4>
+  
+  <!-- CONTACT DETAILS (MAP KE UPAR) -->
+  <div class="footer-address">
+    <p>📍 Omicron I, Greater Noida, Uttar Pradesh</p>
+    <a href="mailto:info@fuzzads.com" class="nav-contact">
+      📧 info@fuzzads.com
+    </a>
+    <a href="tel:+919310930177" class="nav-contact">
+      📞 +91 93109 30177
+    </a>
+  </div>
+
+  <!-- GOOGLE MAP (NEECCHE) -->
+   <h4>Find Us on Map</h4>
+  <div class="map-box">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d28054.239384741057!2d77.34392779999999!3d28.486173700000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1771402282080!5m2!1sen!2sin"
+      width="100%" 
+      height="250" 
+      style="border:0; border-radius:15px;"
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+ 
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="footer-bottom">
+    © 2026 FuzzAds. All Rights Reserved | Greater Noida, India
+  </div>
+</footer>
+
+
+ <script src="script.js"></script>
+
+</body>
+</html>
