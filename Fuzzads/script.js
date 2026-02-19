@@ -168,35 +168,33 @@ function openWhatsApp(){
 
 
 
-// EmailJS Gmail Integration - Bas yeh script add karein
-emailjs.init("YOUR_PUBLIC_KEY"); // Dashboard se copy karein
-
-function submitLead(e) {
+function sendToWhatsApp(e) {
     e.preventDefault();
 
     const name = document.getElementById("name").value;
     const phone = document.getElementById("phone").value;
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
-    
-    const leadId = "LEAD-" + Date.now();
 
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
-        lead_id: leadId,
-        name: name,
-        phone: phone,
-        email: email,
-        message: message
-    })
-    .then(() => {
-        alert('✅ Enquiry sent to Gmail!');
-        e.target.reset();
-    })
-    .catch((error) => {
-        alert('❌ Error! Try again.');
-        console.log(error);
-    });
+    const whatsappNumber = "919310930177"; // Apna number without + sign
+
+    const text =
+`🔥 *New Website Enquiry - FuzzAds*
+
+👤 Name: ${name}
+📞 Phone: ${phone}
+📧 Email: ${email}
+
+📝 Message:
+${message}`;
+
+    const encodedText = encodeURIComponent(text);
+
+    const url = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+
+    window.open(url, "_blank");
 }
+
 
 
 
@@ -291,6 +289,7 @@ window.open("https://wa.me/919310930177?text="+msg,"_blank");
 
 
   
+
 
 
 
